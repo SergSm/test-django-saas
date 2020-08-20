@@ -1,0 +1,23 @@
+# Py charm
+.idea
+# Virtual environment 
+venv/
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+### Django ###
+*.log
+*.pot
+*.pyc
+
+local_settings.py
+
+db.sqlite3
+
+# DEBUG
+arpa-proj/debug.txt
+arpa-proj/secret_key.txt
+arpa-proj/db_password.txt
+arpa-proj/db_credentials.txt
