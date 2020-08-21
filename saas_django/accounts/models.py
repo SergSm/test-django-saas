@@ -4,7 +4,8 @@ from django.db import models, transaction
 
 
 class CompanyManager(models.Manager):
-    """Manager for the Company model. Also handles the account creation"""
+    """Manager for the Company model. Also handles the account creation
+    Provides user creation only with the company"""
 
     @transaction.atomic
     def create_account(self, company_name, username, password, company_address=None):
