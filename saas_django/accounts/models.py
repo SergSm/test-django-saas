@@ -7,6 +7,9 @@ class CompanyManager(models.Manager):
     """Manager for the Company model. Also handles the account creation
     Provides user creation only with the company"""
 
+    # "if the block of code is successfully completed,
+    # the changes are committed to the database.
+    # If there is an exception, the changes are rolled back." (c) django documentation
     @transaction.atomic
     def create_account(self, company_name, username, password, company_address=None):
         """Creates a company along with the User and returns them both"""

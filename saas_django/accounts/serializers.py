@@ -17,7 +17,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         )
 
         extra_kwargs = {
-            'password': {'write_only': True},
+            'password': {'write_only': True},  # prevent users from seeing a password
         }
 
     def create(self, validated_data):
@@ -25,7 +25,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     def update(self, instance, validated_data):
         updated = super().update(instance, validated_data)
-
+        # handling a password update
         if 'password' in validated_data:
             updated.set_password(validated_data['password'])
             updated.save()
@@ -64,4 +64,5 @@ class AccountSerializer(serializers.Serializer):
         return {'company': company, 'user': user}
 
     def update(self, instance, validated_data):
+        # only for account creation
         raise NotImplementedError("Can't call update() on an account")
