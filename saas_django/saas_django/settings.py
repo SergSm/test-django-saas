@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # saas_django app related
+    'rest_framework',
+    'accounts'
 ]
+
+# OVERRIDING DEFAULT User model with our implementation from models
+AUTH_USER_MODEL = 'accounts.User'  # saas_django
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
