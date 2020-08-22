@@ -125,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# SAAS_DJANGO
+LOGIN_REDIRECT_URL = '/api/v1/accounts/users'
