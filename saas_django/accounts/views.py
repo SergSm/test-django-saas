@@ -7,7 +7,7 @@ User = get_user_model()
 
 
 # by inheriting from generics.CreateAPIView we block
-# other(?) ways to list or update the accounts
+# other(?) ways to list or update accounts
 class AccountCreate(generics.CreateAPIView):
     name = 'account-create'
     serializer_class = serializers.AccountSerializer
