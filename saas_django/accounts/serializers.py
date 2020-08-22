@@ -57,8 +57,8 @@ class AccountSerializer(serializers.Serializer):
         company, user = Company.objects.create_account(
             company_name=company_data.get('name'),
             company_address=company_data.get('address'),
-            username=company_data.get('username'),
-            password=company_data.get('password'),
+            username=user_data.get('username'),
+            password=user_data.get('password'),
         )
 
         return {'company': company, 'user': user}
