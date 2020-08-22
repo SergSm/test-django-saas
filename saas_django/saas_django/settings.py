@@ -127,4 +127,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # SAAS_DJANGO
+# this setting will redirect user to the url after successful logging in
 LOGIN_REDIRECT_URL = '/api/v1/accounts/users'
