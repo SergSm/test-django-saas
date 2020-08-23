@@ -22,7 +22,11 @@ saas_django/secret_key.txt
 saas_django/db_password.txt
 saas_django/db_credentials.txt
 
+<<<<<<< HEAD
 sqlite3.exe
 
 # unnecessary migrations folder
 **/migrations/*
+=======
+sqlite3.exe
+>>>>>>> 2f1207ac9a18b741d2fefabcc66e1d3beb13393e
