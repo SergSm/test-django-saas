@@ -26,5 +26,4 @@ sqlite3.exe
 
 # unnecessary migrations folder
 **/migrations/*
-=======
 sqlite3.exe
