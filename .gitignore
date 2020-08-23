@@ -17,7 +17,12 @@ local_settings.py
 db.sqlite3
 
 # DEBUG
-arpa-proj/debug.txt
-arpa-proj/secret_key.txt
-arpa-proj/db_password.txt
-arpa-proj/db_credentials.txt
+saas_django/debug.txt
+saas_django/secret_key.txt
+saas_django/db_password.txt
+saas_django/db_credentials.txt
+
+sqlite3.exe
+
+# unnecessary migrations folder
+**/migrations/*
