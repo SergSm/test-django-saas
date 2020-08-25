@@ -27,7 +27,8 @@ class UserList(generics.ListCreateAPIView):
 
     # Overrides the default method
     def get_queryset(self):
-        # !!!Ensure that the users belong to the company of the user that is making the request
+        # !!!Ensure that the users belong to the company of the user
+        # that is making the request
         company_id = self.request.user.company_id
         return super().get_queryset().filter(company_id=company_id)
 
@@ -42,7 +43,8 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
 
     def get_queryset(self):
-        # Ensure that the user belongs to the company of the user that is making the request
+        # Ensure that the user belongs to the company of the user
+        # that is making the request
         # Note that this method is identical to the one in `UserList`
         company_id = self.request.user.company_id
         return super().get_queryset().filter(company_id=company_id)
