@@ -20,5 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/accounts/', include('accounts.urls')),  # POST-only for creating new account(with company)
 
+    path('api/v1/user-messages/', include('user_messages.urls')),
+
     path('api/v1/auth/', include('rest_framework.urls')),  # log in using django rest framework built-in auth
 ]

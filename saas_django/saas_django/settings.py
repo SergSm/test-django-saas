@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     # saas_django app related
     'rest_framework',
-    'accounts'
+    'accounts',
+    'user_messages',
 ]
 
 # OVERRIDING DEFAULT User model with our implementation from models
