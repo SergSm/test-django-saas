@@ -10,15 +10,13 @@ class UserMessageList(generics.ListCreateAPIView):
     permission_classes = (
         permissions.IsAuthenticated,
     )
-
     serializer_class = serializers.UserMessageSerializer
     queryset = UserMessage.objects.all()
 
     def perform_create(self, serializer):
         company_id = self.request.user.company_id
-        serializers.save(company_id=company_id)
+        serializer.save(company_id=company_id)
 
-    # TODO fix duplicate
     def get_queryset(self):
         company_id = self.request.user.company_id
         return super().get_queryset().filter(company_id=company_id)
@@ -27,12 +25,11 @@ class UserMessageList(generics.ListCreateAPIView):
 class UserMessageDetail(generics.RetrieveAPIView):
     name = 'usermessage-detail'
     permission_classes = (
-        permissions.IsAuthenticated,
+       permissions.IsAuthenticated,
     )
     serializer_class = serializers.UserMessageSerializer
     queryset = UserMessage.objects.all()
 
-    # TODO fix duplicate
     def get_queryset(self):
         company_id = self.request.user.company_id
         return super().get_queryset().filter(company_id=company_id)
