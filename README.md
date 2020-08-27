@@ -4,3 +4,4 @@ following https://blog.nicolasmesa.co/posts/2018/10/saas-like-isolation-in-djang
 
 I've also added default organization assignment for new users
 
+trouble with circullar import
