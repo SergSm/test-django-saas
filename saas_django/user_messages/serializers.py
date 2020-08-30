@@ -1,5 +1,4 @@
 from rest_framework import serializers
-# Changed line (adds the import of CompanySafeSerializerMixin)
 from core.serializers import CompanySafeSerializerMixin
 from .models import UserMessage
 
@@ -15,4 +14,8 @@ class UserMessageSerializer(CompanySafeSerializerMixin, serializers.HyperlinkedM
             'to_user',
             'text',
             'date',
+        )
+
+        read_only_fields = (
+            'from_user',
         )
