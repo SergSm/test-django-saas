@@ -19,4 +19,3 @@ class CompanySafeViewMixin:
     def perform_create(self, serializer):
         company_id = self.request.user.company_id
         serializer.save(company_id=company_id)
-
