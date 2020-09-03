@@ -12,7 +12,7 @@ class CompanySafeRelatedField(serializers.HyperlinkedRelatedField):
         return super().get_queryset().filter(company_id=company_id)
 
 
-class CompanySafeSerializersMixin(object):
+class CompanySafeSerializerMixin    (object):
     """
     Mixin to be used with HyperlinkedRelatedField to ensure that only
     company values are returned

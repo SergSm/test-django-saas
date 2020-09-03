@@ -3,7 +3,9 @@ from rest_framework import generics
 from django.contrib.auth import get_user_model
 
 # new imports
-from core.views import CompanySageViewMixin
+#import core.views
+from core.views import CompanySafeViewMixin
+#from saas_django.core.views import CompanySafeViewMixin
 from . import serializers
 
 
@@ -17,7 +19,8 @@ class AccountCreate(generics.CreateAPIView):
     serializer_class = serializers.AccountSerializer
 
 
-class UserList(generics.ListCreateAPIView):
+# Added CompanySafeViewMixin
+class UserList(CompanySafeViewMixin, generics.ListCreateAPIView):
     name = 'user-list'
     permission_classes = (
         permissions.IsAuthenticated,
@@ -30,7 +33,7 @@ class UserList(generics.ListCreateAPIView):
 
 
 # Added CompanySafeViewMixin
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+class UserDetail(CompanySafeViewMixin, generics.RetrieveUpdateDestroyAPIView):
     name = 'user-detail'
     permission_classes = (
         permissions.IsAuthenticated,
