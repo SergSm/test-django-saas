@@ -10,5 +10,4 @@ urlpatterns = [
 
     path('<uuid:pk>', views.UserMessageDetail.as_view(),
          name=views.UserMessageDetail.name),
-
 ]

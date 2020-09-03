@@ -17,8 +17,11 @@ def get_default_company():
     #   <classmethod object at 0x00000124A17AC940>
     #   There are some values Django cannot serialize into migration files.
 
-    return Company.objects.get_or_create(is_default_company=True,
-                                         name=DEFAULT_COMPANY)[0].pk
+    if not Company.objects.all():
+        return None
+    else:
+        return Company.objects.get_or_create(is_default_company=True,
+                                                name=DEFAULT_COMPANY)[0].pk
 
 
 class CompanyManager(models.Manager):
@@ -80,6 +83,7 @@ class User(AbstractUser):
     company = models.ForeignKey(Company,
                                 related_name='%(class)s',
                                 on_delete=models.CASCADE,
+                                null=True,
                                 editable=False,
                                 default=get_default_company)
 
