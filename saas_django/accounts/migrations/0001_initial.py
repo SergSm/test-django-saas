@@ -11,13 +11,18 @@ import uuid
 from django.core.management import call_command
 
 
-def forward_func():
+def load_company_fixture(apps, schema_editor):
+    """load the 'non existent company'"""
     print('forward')
-    call_command('loaddata Company.json', verbosity=2)
+    call_command('loaddata', 'Company.json', verbosity=2)  # should be enough?
 
 
-def reverse_func():
+def reverse_func(apps, schema_editor):
+    """removes the init company"""
     print('backward')
+    Company = apps.get_model("accounts", "Company")
+    Company.objects.filter(name='non existent company').delete()
+
 
 # endregion
 
@@ -43,6 +48,9 @@ class Migration(migrations.Migration):
                 'db_table': 'companies',
             },
         ),
+
+        migrations.RunPython(load_company_fixture, reverse_func),  # load first non existent company
+
         migrations.CreateModel(
             name='User',
             fields=[
@@ -57,7 +65,7 @@ class Migration(migrations.Migration):
                 ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('company', models.ForeignKey(editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user', to='accounts.company')),
+                ('company', models.ForeignKey(default=Company.objects.first(), editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user', to='accounts.company')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
             ],

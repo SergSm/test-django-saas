@@ -86,12 +86,13 @@ class User(AbstractUser):
                                 on_delete=models.CASCADE,
                                 null=True,
                                 editable=False,
-                                default=Company.objects.get(name=DEFAULT_COMPANY))
+                                default=Company.objects.first().pk)
 
     class Meta:
         db_table = 'users'
 
     def __str__(self):
+        # check if user has a company assigned
         if self.company\
                 and hasattr(self.company, 'name'):
             return f'({self.company.name}) - {self.username}'
