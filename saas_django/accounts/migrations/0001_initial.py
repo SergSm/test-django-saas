@@ -7,6 +7,8 @@ import django.db.models.deletion
 import django.utils.timezone
 import uuid
 
+from saas_django.accounts.models import Company
+
 # region my code
 from django.core.management import call_command
 
