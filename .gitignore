@@ -23,6 +23,3 @@ saas_django/db_password.txt
 saas_django/db_credentials.txt
 
 sqlite3.exe
-
-# unnecessary migrations folder
-**/migrations/*
