@@ -2,28 +2,6 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.db import models, transaction
 
-DEFAULT_COMPANY = 'non existent company'
-
-
-# 03/09/20 commented
-# # top level function
-# def get_default_company():
-#     """get or create the non existent company for new users"""
-#
-#     # NOTE: trying to make this function as the 'User' class @static/class
-#     # method
-#     # leads to impossibility to makemigrations
-#     # The error will be:
-#     #   ValueError: Cannot serialize:
-#     #   <classmethod object at 0x00000124A17AC940>
-#     #   There are some values Django cannot serialize into migration files.
-#
-#     if not Company.objects.all():
-#         return None
-#     else:
-#         return Company.objects.get_or_create(is_default_company=True,
-#                                              name=DEFAULT_COMPANY)[0].pk
-
 
 class CompanyManager(models.Manager):
     """Manager for the Company model. Also handles the account creation
@@ -86,7 +64,7 @@ class User(AbstractUser):
                                 on_delete=models.CASCADE,
                                 null=True,
                                 editable=False,
-                                default=Company.objects.first().pk)
+                                )
 
     class Meta:
         db_table = 'users'

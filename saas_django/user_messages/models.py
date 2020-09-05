@@ -15,7 +15,7 @@ class UserMessageManager(models.Manager):
 
     def get_for_user(self, user):
         """Retrieves all messages that a user either sent or received"""
-        return self.all().filter(company_id=company_id).filter(Q(from_user=user) | Q(to_user=user))
+        return self.all().filter(company_id=user.company_id).filter(Q(from_user=user) | Q(to_user=user))
 
 
 # model inherits id and company from CompanyRelatedModel

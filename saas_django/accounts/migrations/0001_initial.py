@@ -7,12 +7,12 @@ import django.db.models.deletion
 import django.utils.timezone
 import uuid
 
-from saas_django.accounts.models import Company
 
 # region my code
 from django.core.management import call_command
 
 
+# Creating company
 def load_company_fixture(apps, schema_editor):
     """load the 'non existent company'"""
     print('forward')
@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
                 ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('company', models.ForeignKey(default=Company.objects.first(), editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user', to='accounts.company')),
+                ('company', models.ForeignKey( editable=False, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user', to='accounts.company')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
             ],

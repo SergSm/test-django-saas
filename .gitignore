@@ -16,6 +16,9 @@ local_settings.py
 
 db.sqlite3
 
+# additional clean up script
+purge_cache.bat
+
 # DEBUG
 saas_django/debug.txt
 saas_django/secret_key.txt
