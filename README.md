@@ -3,6 +3,8 @@ all the credit goes to Nicolas Mesa
 https://blog.nicolasmesa.co/posts/2018/10/saas-like-isolation-in-django-rest-framework/
 
 
+
+
 ## Steps after installation:
 
 Run in virtual environment:
@@ -13,7 +15,7 @@ python manage.py createsuperuser
 
 ## Description
 
-This project uses  ```django-rest-framework``` to create accounts system for User and Company model.
+Django SaaS like isolation  using  ```django-rest-framework``` to create accounts system for User and Company model.
 
 Every new User have the Company tied to his account 
 
