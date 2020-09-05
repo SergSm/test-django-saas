@@ -33,20 +33,21 @@ api/v1/user-messages/ - to send a message or see existing messages of the the cu
 ###Endpoints use cases:
 Go to http://127.0.0.1:8000/api/v1/accounts/ to create a new account
 
-![api/v1/accounts](https://github.com/SergSm/test-django-saas/images/accounts.png)
+![api/v1/accounts](https://github.com/SergSm/test-django-saas/blob/master/images/accounts.png?raw=true)
 
 Go to http://127.0.0.1:8000/api/v1/accounts/users/  to see every user but only if you are logged in
 
-![api/v1/accounts/users](https://github.com/SergSm/test-django-saas/images/user-list.png)
+![api/v1/accounts/users](https://github.com/SergSm/test-django-saas/blob/master/images/user-list.png?raw=true)
 
 Go to http://127.0.0.1:8000/api/v1/accounts/company to see the current user company 
 
-![/api/v1/accounts/company](https://github.com/SergSm/test-django-saas/images/company-detail.png)
+![/api/v1/accounts/company](https://github.com/SergSm/test-django-saas/blob/master/images/company-detail.png?raw=true)
   
   
 Go to http://127.0.0.1:8000/api/v1/user-messages/ to send a message to other users(logged in user sees only his messages)
 
-![/api/v1/user-messages](https://github.com/SergSm/test-django-saas/images/usermessage-list.png.png)
+![/api/v1/user-messages](https://github.com/SergSm/test-django-saas/blob/master/images/usermessage-list.png?raw=true)
+
   
   
   
