@@ -9,7 +9,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-##Description
+## Description
 
 This project uses  ```django-rest-framework``` to create accounts system for User and Company model.
 
