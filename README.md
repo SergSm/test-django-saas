@@ -1,5 +1,7 @@
 # test-django-saas
-following https://blog.nicolasmesa.co/posts/2018/10/saas-like-isolation-in-django-rest-framework/
+all the credit goes to Nicolas Mesa
+https://blog.nicolasmesa.co/posts/2018/10/saas-like-isolation-in-django-rest-framework/
+
 
 ## Steps after installation:
 
