@@ -1,7 +1,7 @@
 # test-django-saas
 following https://blog.nicolasmesa.co/posts/2018/10/saas-like-isolation-in-django-rest-framework/
 
-##Steps after installation:
+## Steps after installation:
 
 Run in virtual environment:
 ```
@@ -22,7 +22,7 @@ The project also has the ```user_messages``` app by which users can transfer mes
 Every logging in user may see only his messages
 
 
-###Endpoints:
+### Endpoints:
 ```
 api/v1/accounts/ - to create a new account
 api/v1/accounts/users/ - to see the list of the users(every created user - seems like a bug)
@@ -30,7 +30,7 @@ api/v1/accounts/company - logged in user may see only his company
 api/v1/user-messages/ - to send a message or see existing messages of the the current logged in user
 ```
 
-###Endpoints use cases:
+### Endpoints use cases:
 Go to http://127.0.0.1:8000/api/v1/accounts/ to create a new account
 
 ![api/v1/accounts](https://github.com/SergSm/test-django-saas/blob/master/images/accounts.png?raw=true)
@@ -52,7 +52,7 @@ Go to http://127.0.0.1:8000/api/v1/user-messages/ to send a message to other use
   
   
   
-##Additional info
+## Additional info
 
 The project also uses the one fixture to create 'non existent company' in the Company model
 
